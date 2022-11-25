@@ -14,7 +14,8 @@ export default SearchText;
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const searchText = context.params?.searchText;
 
-  if (!searchText || Array.isArray(searchText)) return { props: {} };
+  if (!searchText || Array.isArray(searchText))
+    return { props: { notFound: "Movies not found" } };
 
   const searchResult = await fetchMovies(searchText);
 
