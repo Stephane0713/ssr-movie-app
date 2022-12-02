@@ -10,7 +10,7 @@ const MovieId = ({ movie }: Props) => {
   return (
     <>
       <Head>
-        <title>MyMovies - {movie.title}</title>
+        <title>{`MyMovies - ${movie.title}`}</title>
       </Head>
       <MovieCard movie={movie} />
     </>
