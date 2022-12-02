@@ -1,37 +1,18 @@
-import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Rating,
-  Typography,
-} from "@mui/material";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { Card, CardContent, Rating, Typography } from "@mui/material";
+
 import React from "react";
 import classes from "./movie-card.module.css";
 import { Movie } from "models";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import { getImage } from "services/api/helpers";
 
 type Props = { movie: Movie };
 
 const MovieCard = ({ movie }: Props) => {
-  const router = useRouter();
   const imgSrc = getImage(movie.poster_path);
 
   return (
     <>
-      <Button
-        variant="outlined"
-        startIcon={<KeyboardBackspaceIcon />}
-        sx={{ marginRight: "auto", marginBottom: 2 }}
-        onClick={() => {
-          router.push("/");
-        }}
-      >
-        Go back
-      </Button>
       <Card className={classes.root}>
         <Image
           src={imgSrc}

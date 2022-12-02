@@ -9,7 +9,7 @@ export async function fetchMovies(search: string): Promise<SearchMoviesResult> {
   ).then(async (res) => await res.json()) as Promise<SearchMoviesResult>;
 }
 
-export async function fetchMovie(id: string): Promise<Movie> {
+export async function fetchMovie(id: number): Promise<Movie> {
   return fetch(`${baseUrl}/movie/${id}?api_key=${apiKey}&language=fr-FR`).then(
     async (res) => await res.json()
   ) as Promise<Movie>;
