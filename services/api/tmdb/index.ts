@@ -1,4 +1,4 @@
-import { Movie, SearchMoviesResult } from "../models/movie.model";
+import { Movie, SearchMoviesResult } from "models";
 
 const baseUrl = "https://api.themoviedb.org/3";
 const apiKey = process.env["NEXT_PUBLIC_API_KEY"];

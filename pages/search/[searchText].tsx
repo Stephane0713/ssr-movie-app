@@ -1,7 +1,7 @@
 import { SearchResult } from "components/SearchResult";
-import { SearchMoviesResult } from "models/movie.model";
+import { SearchMoviesResult } from "models";
 import { GetServerSideProps } from "next";
-import { fetchMovies } from "services/fetch.service";
+import { fetchMovies } from "services/api/tmdb";
 
 type Props = { searchResult: SearchMoviesResult };
 

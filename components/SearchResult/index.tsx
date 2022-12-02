@@ -9,13 +9,15 @@ import {
   Paper,
 } from "@mui/material";
 import React from "react";
-import { SearchMoviesResult } from "models/movie.model";
+import { SearchMoviesResult } from "models";
+import { useRouter } from "next/router";
 
 type Props = {
   searchResult: SearchMoviesResult;
 };
 
 const SearchResult = ({ searchResult }: Props) => {
+  const router = useRouter();
   const results = searchResult?.results ?? [];
 
   return (
@@ -50,7 +52,9 @@ const SearchResult = ({ searchResult }: Props) => {
                 key={movie.id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 className={classes.row}
-                onClick={() => {}}
+                onClick={() => {
+                  router.push(`/movies/${movie.id}`);
+                }}
               >
                 <TableCell align="center">{movie.id}</TableCell>
                 <TableCell align="center">{movie.title}</TableCell>
